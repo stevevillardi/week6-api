@@ -1,0 +1,10 @@
+.trending-image {
+    margin: 5px 5px;
+    border: 2px black solid;
+}
+
+.modal-dialog {
+    padding-top: 130px;
+    height: 800px;
+    width: 800px;
+}
