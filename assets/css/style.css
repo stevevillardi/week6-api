@@ -42,5 +42,11 @@
 }
 
 .navbar-nav li {
-    margin-left: 20px;
+    margin-left: 10px;
 }
+
+@media only screen and (max-width: 1300px) {
+    .navbar-nav {
+      display: none;
+    }
+  }
