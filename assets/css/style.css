@@ -6,7 +6,7 @@
 
 .modal-dialog {
     padding-top: 130px;
-    height: 800px;
+    max-height: 1000px;
     width: 800px;
     overflow: hidden;
     white-space: nowrap;
@@ -34,6 +34,7 @@
 .navbar-nav li {
     margin-left: 10px;
 }
+
 
 @media only screen and (max-width: 1300px) {
     .navbar-nav {
