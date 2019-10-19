@@ -13,13 +13,22 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand"><img src="./assets/images/giphy_logo.png" height="50" alt="" srcset=""></a>
+        <ul class="navbar-nav"></ul>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search for GIFs..." aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">GIPHY Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn" >GIPHY Search</button>
         </form>
     </nav>
     <!-- Start of page content container-->
     <div class="container-fluid text-center">
+        <div class="row" id ="favorite-toggle">
+            <div class="col-sm-12">
+                <h3>Favorite GIFs</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="favorite-list"></div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <h3>Trending GIFs</h3>
@@ -33,18 +42,25 @@
                 <h3>Search Results</h3>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12" id="search-list"></div>
+        </div>
     </div>
 
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" id="gif-detail">
-                <div class="container-fluid">
+                <div class="container-fluid" id="modal-div">
                     <div class="row">
                         <div class="col-sm-12" id="g-detail">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 text-center" id="g-detail-img">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-center" id="g-detail-btn">
                         </div>
                     </div>
                 </div>

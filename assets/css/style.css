@@ -1,10 +1,46 @@
 .trending-image {
     margin: 5px 5px;
     border: 2px black solid;
+    cursor: pointer;
+}
+
+.search-image {
+    margin: 5px 5px;
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.favorite-image {
+    margin: 5px 5px;
+    border: 2px black solid;
+    cursor: pointer;
 }
 
 .modal-dialog {
     padding-top: 130px;
     height: 800px;
     width: 800px;
+}
+.modal-span {
+    font-weight: bold;
+}
+
+#modal-div {
+    padding: 20px;
+}
+
+#modal-div p {
+    margin: 0px;
+}
+
+#g-detail-img {
+    margin-top: 20px;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.navbar-nav li {
+    margin-left: 20px;
 }
