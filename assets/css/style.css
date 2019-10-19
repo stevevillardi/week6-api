@@ -1,16 +1,4 @@
-.trending-image {
-    margin: 5px 5px;
-    border: 2px black solid;
-    cursor: pointer;
-}
-
-.search-image {
-    margin: 5px 5px;
-    border: 2px black solid;
-    cursor: pointer;
-}
-
-.favorite-image {
+.trending-image, .search-image, .favorite-image {
     margin: 5px 5px;
     border: 2px black solid;
     cursor: pointer;
@@ -21,6 +9,7 @@
     height: 800px;
     width: 800px;
     overflow: hidden;
+    white-space: nowrap;
 }
 .modal-span {
     font-weight: bold;
