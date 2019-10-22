@@ -17,9 +17,9 @@ $(document).ready(function(){
             index++
         }
     }
-    function createPreview(){
-        //$("#gif-detail").empty();
-        let gifID = $(this).attr("data-gid");
+    function createPreview(item){
+        console.log(typeof item)
+        let gifID = item
         let queryURL = `${apiURL}/${gifID}?api_key=${apiKey}`;
         
         $.ajax({
@@ -75,7 +75,9 @@ $(document).ready(function(){
                 buildGifList(getData,"#search-list",class_name);
             }
             
-            $(`.${class_name}`).click(createPreview);
+            $(`.${class_name}`).click(function(){
+                createPreview($(this).attr("data-gid"));
+            });
             
             $(`.${class_name}`).hover(function(){
                 $(this).attr("src",`${getData[$(this).data("id")].images.fixed_height_small.url}`);
@@ -103,18 +105,6 @@ $(document).ready(function(){
         $("#favorite-toggle").show();
         let favItem = getData[gIndex];
         $(favList).append(`<img class="favorite-image" data-id="${gIndex}" data-gid="${favItem.id}" src="${favItem.images.fixed_height_small_still.url}" />`);
-        $(`.favorite-image`).click(function(){
-            toggle = 1
-            createPreview
-        });
-        $(`.favorite-image`).hover(function(){
-            $(this).attr("src",`${getData[$(this).data("id")].images.fixed_height_small.url}`);
-            $(this).css("border", "blue solid 2px");
-            },
-            function(){
-            $(this).attr("src",`${getData[$(this).data("id")].images.fixed_height_small_still.url}`);
-            $(this).css("border", "black solid 2px");
-        });
     }
 
     $("#favorite-toggle").hide();
@@ -148,12 +138,24 @@ $(document).ready(function(){
     });
 
     $(document).on("click",".favorite-image",function() {
+        console.log($(this))
         selectFavorite = $(this)
+        createPreview($(this).attr("data-gid"))
+        toggle = 1
         let addBtn = $("#add-btn");
         addBtn.attr("id","remove-btn")
         addBtn.text("Remove from Favorites");
-        toggle = 0
         $(".bd-example-modal-lg").modal('toggle');
+    });
+
+    $(document).on("mouseleave",".favorite-image",function(){
+        $(this).attr("src",`${getData[$(this).data("id")].images.fixed_height_small_still.url}`);
+        $(this).css("border", "black solid 2px");
+    });
+
+    $(document).on("mouseover",".favorite-image",function() {
+        $(this).attr("src",`${getData[$(this).data("id")].images.fixed_height_small.url}`);
+        $(this).css("border", "blue solid 2px");
     });
 
     $(document).on("click","#remove-btn",function() {
