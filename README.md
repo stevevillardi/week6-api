@@ -1,5 +1,7 @@
 # GIPHY API - Week 6 Homework Assignment
 
+DEMO: https://stevevillardi.github.io/week6-api/
+
 ## Notes/Features
 - All GIFs load as still images and will play on hover and stop when no longer hovering
 - Search bar in top right can be used to search for GIFs using the GIPHY API
